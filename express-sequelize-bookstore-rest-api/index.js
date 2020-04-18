@@ -63,7 +63,7 @@ const book = sequelize.define(
       //Set custom getter for book image using URL
       get() {
         const image = this.getDataValue("image");
-        return "/img/" + image;
+        return uploadDir + image;
       },
     },
     createdAt: {
