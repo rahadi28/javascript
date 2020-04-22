@@ -86,7 +86,6 @@ router.patch("/:id", async function (req, res, next) {
 router.delete("/:id", async function (req, res, next) {
   try {
     const petsId = req.params.id;
-    console.log(petsId);
     const pets = await model.pets.destroy({
       where: {
         id: petsId,

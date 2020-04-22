@@ -31,12 +31,13 @@ router.get("/", async function (req, res, next) {
 /* POST users */
 router.post("/", async function (req, res, next) {
   try {
-    const { name, email, gender, phoneNumber } = req.body;
+    const { fullName, gender, phoneNumber, email, password } = req.body;
     const users = await model.users.create({
-      name,
-      email,
+      fullName,
       gender,
       phoneNumber,
+      email,
+      password,
     });
     if (users) {
       res.status(201).json({
@@ -58,13 +59,14 @@ router.post("/", async function (req, res, next) {
 router.patch("/:id", async function (req, res, next) {
   try {
     const usersId = req.params.id;
-    const { name, email, gender, phoneNumber } = req.body;
+    const { fullName, gender, phoneNumber, email, password } = req.body;
     const users = await model.users.update(
       {
-        name,
-        email,
+        fullName,
         gender,
         phoneNumber,
+        email,
+        password,
       },
       {
         where: {
@@ -92,7 +94,6 @@ router.patch("/:id", async function (req, res, next) {
 router.delete("/:id", async function (req, res, next) {
   try {
     const usersId = req.params.id;
-    console.log(usersId);
     const users = await model.users.destroy({
       where: {
         id: usersId,
