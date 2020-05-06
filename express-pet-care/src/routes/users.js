@@ -1,17 +1,34 @@
 var express = require("express");
+var passport = require("passport");
 var router = express.Router();
 var UserController = require("../controllers/UserController.js");
 
 /* Find all users. */
-router.get("/", UserController.findAll);
+router.get(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  UserController.findAll
+);
 
 /* Create users */
-router.post("/", UserController.create);
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  UserController.create
+);
 
 /* Update users */
-router.patch("/:id", UserController.update);
+router.patch(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  UserController.update
+);
 
 /* Destroy users */
-router.delete("/:id", UserController.destroy);
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  UserController.destroy
+);
 
 module.exports = router;
