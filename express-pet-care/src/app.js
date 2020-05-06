@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var router = require("./routes/index.js");
+var passport = require("passport");
 
 var app = express();
 
@@ -13,6 +14,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", router);
+app.use(passport.initialize());
+
+require("./middlewares/passport.js")(passport);
 
 /**
  * Catch 404 and forward to error handler.
