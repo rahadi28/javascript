@@ -1,0 +1,23 @@
+{
+  "name": "express-upload-download-file",
+  "version": "1.0.0",
+  "description": "express-upload-download-file",
+  "main": "index.js",
+  "module": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "rahadi <hello.adie@yahoo.com> (https://github.com/rahadi28)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
