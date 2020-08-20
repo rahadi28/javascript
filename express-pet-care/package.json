@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "await-to-js": "^2.1.1",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "bcrypt-nodejs": "0.0.3",
     "bcrypt-promise": "^2.0.0",
     "cookie-parser": "^1.4.5",
